@@ -1,0 +1,78 @@
+<div class="container">
+  <form id="add_form" [formGroup]="item_form" (ngSubmit)="Onsubmit()">
+    <div class="row">
+      <div class="col-25">
+        <label>Category:</label>
+      </div>
+      <div class="col-75">
+        <select formControlName="Category">
+          <option value="none" selected disabled hidden>
+            Select an Option
+          </option>
+          <option value="Vegetable">Vegetable</option>
+          <option value="Fruit">Fruit</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>Name:</label>
+      </div>
+
+      <div class="col-75">
+        <input
+          type="text"
+          formControlName="Name"
+          placeholder="Item Name"
+          required
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>
+          Item Total kg
+        </label>
+      </div>
+      <div class="col-75">
+        <input
+          type="number"
+          formControlName="Total_kg"
+          placeholder="Total Kilogram"
+          required
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>
+          Price per Kg
+        </label>
+      </div>
+      <div class="col-75">
+        <input
+          type="number"
+          formControlName="Price_kg"
+          placeholder="Price per kilogram"
+          required
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label>
+          Date
+        </label>
+      </div>
+      <div class="col-75">
+        <input type="date" formControlName="Exp_date" />
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
+    </div>
+  </form>
+  <div *ngIf="save==false" role="alert"><strong>Fill!</strong> All Field</div>
+</div>
